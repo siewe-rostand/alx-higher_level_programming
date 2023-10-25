@@ -3,4 +3,5 @@
 """Defines a square""" 
 class Square:
     """Empty string"""
+
     pass
