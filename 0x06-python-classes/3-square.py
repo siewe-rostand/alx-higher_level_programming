@@ -3,6 +3,7 @@
 Super simple Square Module.
 """
 
+
 class Square:
     """
     Only does one thing: Gives you its area.
