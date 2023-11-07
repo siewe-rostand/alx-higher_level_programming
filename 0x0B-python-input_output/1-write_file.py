@@ -1,22 +1,22 @@
 #!/usr/bin/python3
 
 
-def number_of_lines(filename=""):
-    """Count number of lines in file
+def write_file(filename="", text=""):
+    """Write string to file
     Args:
         filename (str): string of path to file
+        text (str): string to write to file
     Returns:
-        number of lines in file
+        number of characters written
 
     """
-    nb_lines = 0
-    with open(filename, 'r', encoding='utf-8') as f:
-        for line in f:
-            nb_lines += 1
-    return nb_lines
+    chars_written = 0
+    with open(filename, 'w', encoding='utf-8') as f:
+        chars_written += f.write(text)
+    return chars_written
 
 
 if __name__ == '__main__':
-    filename = "my_file_0.txt"
-    nb_lines = number_of_lines(filename)
-    print("{} has {:d} lines".format(filename, nb_lines))
+    nb_characters = write_file(
+        "my_first_file.txt", "Holberton School is so cool!\n")
+    print(nb_characters)

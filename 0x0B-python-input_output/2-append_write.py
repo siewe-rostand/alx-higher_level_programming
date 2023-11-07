@@ -1,21 +1,19 @@
 #!/usr/bin/python3
+""" Module that contains a function that appends to a text file
+"""
 
 
-def read_lines(filename="", nb_lines=0):
-    """Print out number of lines requested
+def append_write(filename="", text=""):
+    """ Function that appends to a text file
+
     Args:
-        filename (str): string of path to file
-        nb_lines (int): number of lines
+        filename: filename
+        text: text to write
+
+    Raises
+        Exception: when the file can be opened
 
     """
-    with open(filename, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-        nlines = len(lines)
-        if nb_lines <= 0 or nb_lines >= nlines:
-            for line in lines:
-                print(line, end='')
-        else:
-            i = 0
-            while i < nb_lines:
-                print(lines[i], end='')
-                i += 1
+
+    with open(filename, 'a', encoding="utf-8") as f:
+        return f.write(text)
