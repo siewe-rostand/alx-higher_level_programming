@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-""" Module that contains a function that returns the number of lines
-    of a text file
-"""
 
 
 def number_of_lines(filename=""):
@@ -17,3 +14,9 @@ def number_of_lines(filename=""):
         for line in f:
             nb_lines += 1
     return nb_lines
+
+
+if __name__ == '__main__':
+    filename = "my_file_0.txt"
+    nb_lines = number_of_lines(filename)
+    print("{} has {:d} lines".format(filename, nb_lines))
